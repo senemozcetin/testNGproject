@@ -1,4 +1,4 @@
-package tests;
+package tests.day01;
 
 import org.testng.annotations.Test;
 import utilities.ConfigReader;

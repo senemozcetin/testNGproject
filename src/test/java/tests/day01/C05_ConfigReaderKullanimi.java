@@ -1,7 +1,4 @@
-package tests;
-
-import com.github.javafaker.Faker;
-import org.testng.Assert;
+package tests.day01;
 import org.testng.annotations.Test;
 import pages.FacebookPage;
 import utilities.ConfigReader;
