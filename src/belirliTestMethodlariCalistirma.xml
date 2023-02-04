@@ -11,6 +11,10 @@
 
     Eger methodlar dependsOnMethods ile birbirine baglanmissa xml dosyasi calisirken celiski olusmamasi lazim
     celiski durumunda selenium testleri calistirmaz
+
+    Suite tag inin icine yazilacak verbose attribute konsolda cikan mesajlarin daha az ya da daha cok olmasini belirler
+    1 en az
+    10 en cok
     -->
     <test name="method">
         <classes>

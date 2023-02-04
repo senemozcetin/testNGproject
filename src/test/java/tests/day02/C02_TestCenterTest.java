@@ -7,7 +7,7 @@ import utilities.ConfigReader;
 import utilities.Driver;
 
 public class C02_TestCenterTest {
-    @Test
+    @Test(groups ="grup1" )
     public void test01(){
         TestCenterPage testCenterPage= new TestCenterPage();
         Driver.getDriver().get(ConfigReader.getProperty("testcenter_url"));

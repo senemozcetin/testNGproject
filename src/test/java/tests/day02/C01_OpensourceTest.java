@@ -9,7 +9,7 @@ import utilities.Driver;
 
 public class C01_OpensourceTest {
 
-    @Test
+    @Test(groups = {"grup1" , "grup2"})
     public void test01() throws InterruptedException {
         OpensourcePage opensourcePage=new OpensourcePage();
         Driver.getDriver().get(ConfigReader.getProperty("opensource_url"));

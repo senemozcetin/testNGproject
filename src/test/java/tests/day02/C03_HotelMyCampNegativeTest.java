@@ -13,7 +13,7 @@ import utilities.Driver;
 //Degerleri girildiginde sayfaya girilemedigini test et
 
 public class C03_HotelMyCampNegativeTest {
-    @Test
+    @Test(groups = "grup2")
     public void test01(){
         HotelMyCampNegativePage hotelMyCampNegativePage=new HotelMyCampNegativePage();
         Driver.getDriver().get(ConfigReader.getProperty("hotelmycamp_url"));
