@@ -54,8 +54,11 @@ public class Soft_Assert {
         select.selectByVisibleText("Eurozone (euro)");
 
         //9. soft assert kullanarak "Eurozone (Euro)" secildigini test edin
-        SoftAssert softAssert= new SoftAssert();
-        softAssert.assertTrue(webAppSecurityPayPage.ddm.isSelected());
+        String actualResult = select.getFirstSelectedOption().getText();
+        String expectedResult = "Eurozone (euro)";
+        SoftAssert softAssert = new SoftAssert();
+        softAssert.assertEquals(actualResult, expectedResult);
+        //softAssert.assertTrue(webAppSecurityPayPage.ddm.isSelected());
 
         //10.soft assert kullanarak DropDown listesinin su secenekleri oldugunu test
         //edin "Select One", "Australia (dollar)", "Canada (dollar)","Switzerland
@@ -64,21 +67,23 @@ public class Soft_Assert {
         //(krone)","New Zealand (dollar)","Sweden (krona)","Singapore
         //(dollar)","Thailand (baht)"
 
+        List<WebElement> ddmOptions = select.getOptions();
+        List<String> actualOptions = new ArrayList<>();
+        for (WebElement w : ddmOptions) {
+            actualOptions.add(w.getText());
+        }
+        System.out.println(actualOptions);
         String []arr={"Select One", "Australia (dollar)", "Canada (dollar)",
                 "Switzerland (franc)","China (yuan)","Denmark (krone)",
                 "Eurozone (euro)","Great Britain (pound)","Hong Kong (dollar)",
                 "Japan (yen)","Mexico (peso)","Norway (krone)","New Zealand (dollar)",
                 "Sweden (krona)","Singapore (dollar)","Thailand (baht)"};
-
-        List<String> options=Arrays.asList(arr);
-
-        List<WebElement> ddmOptions= select.getOptions();
-
-        List<String> actualOptions = new ArrayList<>();
-        for (WebElement w : ddmOptions) {
-            actualOptions.add(w.getText());
+        List<String> options= new ArrayList<>();
+        for (String w : arr) {
+            options.add(w);
         }
-        softAssert.assertTrue(actualOptions.contains(options));
+        System.out.println(options);
+        softAssert.assertEquals(actualOptions, options);
         softAssert.assertAll();
     }
 }
