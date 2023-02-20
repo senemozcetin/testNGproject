@@ -1,5 +1,5 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
-<suite name="istenen methodlar">
+<suite name="istenen methodlar" verbose="1">
 
     <!--
     Bir class da tum test methodlari calisacaksa bunun icin direkt class secmek yeterlidir
