@@ -42,7 +42,7 @@ public class CrossDriver {
         }
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(15));
-        driver.manage().window().maximize();
+
         return driver;
     }
     //    closeDriver() is used to close the driver
